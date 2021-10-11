@@ -33,6 +33,7 @@ namespace BaseDeDatosEnCsharp
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnPedidos = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnlibros = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnGenerar
@@ -57,7 +58,7 @@ namespace BaseDeDatosEnCsharp
             // 
             // btnPedidos
             // 
-            this.btnPedidos.Location = new System.Drawing.Point(335, 236);
+            this.btnPedidos.Location = new System.Drawing.Point(345, 236);
             this.btnPedidos.Name = "btnPedidos";
             this.btnPedidos.Size = new System.Drawing.Size(103, 52);
             this.btnPedidos.TabIndex = 2;
@@ -75,11 +76,22 @@ namespace BaseDeDatosEnCsharp
             this.label1.TabIndex = 3;
             this.label1.Text = "BASE DE DATOS EN C#";
             // 
+            // btnlibros
+            // 
+            this.btnlibros.Location = new System.Drawing.Point(201, 236);
+            this.btnlibros.Name = "btnlibros";
+            this.btnlibros.Size = new System.Drawing.Size(103, 52);
+            this.btnlibros.TabIndex = 4;
+            this.btnlibros.Text = "Libros";
+            this.btnlibros.UseVisualStyleBackColor = true;
+            this.btnlibros.Click += new System.EventHandler(this.btnlibros_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(504, 349);
+            this.Controls.Add(this.btnlibros);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPedidos);
             this.Controls.Add(this.btnClientes);
@@ -98,6 +110,7 @@ namespace BaseDeDatosEnCsharp
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Button btnPedidos;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnlibros;
     }
 }
 

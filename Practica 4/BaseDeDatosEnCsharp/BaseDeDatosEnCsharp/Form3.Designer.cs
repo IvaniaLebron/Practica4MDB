@@ -41,6 +41,10 @@ namespace BaseDeDatosEnCsharp
             this.label5 = new System.Windows.Forms.Label();
             this.lbNombreC = new System.Windows.Forms.Label();
             this.btnVolverP = new System.Windows.Forms.Button();
+            this.lbPrecioP = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lbLibrosP = new System.Windows.Forms.Label();
+            this.lbIDlibro = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nUDcant)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,6 +91,7 @@ namespace BaseDeDatosEnCsharp
             this.nUDcant.Name = "nUDcant";
             this.nUDcant.Size = new System.Drawing.Size(65, 27);
             this.nUDcant.TabIndex = 9;
+            this.nUDcant.ValueChanged += new System.EventHandler(this.nUDcant_ValueChanged);
             // 
             // label4
             // 
@@ -153,11 +158,54 @@ namespace BaseDeDatosEnCsharp
             this.btnVolverP.UseVisualStyleBackColor = true;
             this.btnVolverP.Click += new System.EventHandler(this.btnVolverP_Click);
             // 
+            // lbPrecioP
+            // 
+            this.lbPrecioP.AutoSize = true;
+            this.lbPrecioP.Location = new System.Drawing.Point(469, 240);
+            this.lbPrecioP.Name = "lbPrecioP";
+            this.lbPrecioP.Size = new System.Drawing.Size(28, 20);
+            this.lbPrecioP.TabIndex = 18;
+            this.lbPrecioP.Text = "0.0";
+            this.lbPrecioP.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(466, 164);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 20);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Pedido:";
+            // 
+            // lbLibrosP
+            // 
+            this.lbLibrosP.AutoSize = true;
+            this.lbLibrosP.Location = new System.Drawing.Point(497, 208);
+            this.lbLibrosP.Name = "lbLibrosP";
+            this.lbLibrosP.Size = new System.Drawing.Size(50, 20);
+            this.lbLibrosP.TabIndex = 19;
+            this.lbLibrosP.Text = "label6";
+            this.lbLibrosP.Visible = false;
+            // 
+            // lbIDlibro
+            // 
+            this.lbIDlibro.AutoSize = true;
+            this.lbIDlibro.Location = new System.Drawing.Point(466, 208);
+            this.lbIDlibro.Name = "lbIDlibro";
+            this.lbIDlibro.Size = new System.Drawing.Size(17, 20);
+            this.lbIDlibro.TabIndex = 20;
+            this.lbIDlibro.Text = "0";
+            this.lbIDlibro.Visible = false;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(766, 363);
+            this.Controls.Add(this.lbIDlibro);
+            this.Controls.Add(this.lbLibrosP);
+            this.Controls.Add(this.lbPrecioP);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnVolverP);
             this.Controls.Add(this.lbNombreC);
             this.Controls.Add(this.label5);
@@ -193,5 +241,9 @@ namespace BaseDeDatosEnCsharp
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbNombreC;
         private System.Windows.Forms.Button btnVolverP;
+        private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.Label lbPrecioP;
+        public System.Windows.Forms.Label lbLibrosP;
+        public System.Windows.Forms.Label lbIDlibro;
     }
 }

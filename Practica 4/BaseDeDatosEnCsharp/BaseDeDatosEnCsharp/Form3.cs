@@ -19,6 +19,7 @@ namespace BaseDeDatosEnCsharp
         public Form3()
         {
             InitializeComponent();
+            nUDcant.Text = "1";
             conexion cn = new conexion();
             cn.conec();
             sCn = cn.cadena;
@@ -86,15 +87,20 @@ namespace BaseDeDatosEnCsharp
             {
                 conn.Open();
                 string insertarPedido;
-                insertarPedido = "INSERT INTO PEDIDOS(id_Cliente, CantidadPedido, FechaPedido)";
-                insertarPedido += "VALUES (@id_Cliente, @CantidadPedido, @FechaPedido)";
+                insertarPedido = "INSERT INTO PEDIDOS(id_Cliente, id_Libro, CantidadPedido, FechaPedido, Precio)";
+                insertarPedido += "VALUES (@id_Cliente, @libro, @CantidadPedido, @FechaPedido, @precio)";
                 insert1 = new SqlCommand(insertarPedido, conn);
                 insert1.Parameters.Add(new SqlParameter("@id_Cliente", SqlDbType.Int));
                 insert1.Parameters["@id_Cliente"].Value = cbCliente.Text;
+                insert1.Parameters.Add(new SqlParameter("@libro", SqlDbType.Int));
+                insert1.Parameters["@libro"].Value = lbIDlibro.Text;
                 insert1.Parameters.Add(new SqlParameter("@CantidadPedido", SqlDbType.Int));
                 insert1.Parameters["@CantidadPedido"].Value = nUDcant.Value;
                 insert1.Parameters.Add(new SqlParameter("@FechaPedido", SqlDbType.VarChar, 200));
                 insert1.Parameters["@FechaPedido"].Value = dtime1.Text;
+                insert1.Parameters.Add(new SqlParameter("@precio", SqlDbType.Decimal));
+                insert1.Parameters["@precio"].Value = lbPrecioP.Text;
+
                 insert1.ExecuteNonQuery();
                 cbCliente.Text = "";
                 nUDcant.Value = 0;
@@ -111,9 +117,12 @@ namespace BaseDeDatosEnCsharp
         private void btnLimpiarP_Click(object sender, EventArgs e)
         {
             cbCliente.Text = "";
-            nUDcant.Value = 0;
+            nUDcant.Value = 1;
             dtime1.Text = "";
             lbNombreC.Text = "";
+            lbLibrosP.Text = "";
+            lbIDlibro.Text = "";
+            lbPrecioP.Text = "";
         }
 
         private void btnVolverP_Click(object sender, EventArgs e)
@@ -121,6 +130,14 @@ namespace BaseDeDatosEnCsharp
             Form1 formu1 = new Form1();
             formu1.Show();
             this.Hide();
+        }
+
+        private void nUDcant_ValueChanged(object sender, EventArgs e)
+        {
+            decimal nuevoprecio, precioriginal;
+            precioriginal = Convert.ToDecimal(lbPrecioP.Text);
+            nuevoprecio = nUDcant.Value * precioriginal;
+            lbPrecioP.Text = nuevoprecio.ToString();
         }
     }
 }
