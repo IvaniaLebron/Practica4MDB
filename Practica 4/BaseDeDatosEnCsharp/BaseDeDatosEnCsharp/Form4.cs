@@ -91,5 +91,31 @@ namespace BaseDeDatosEnCsharp
             enviar.Show();
             this.Close();
         }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            string borrar;
+            borrar = $"DELETE FROM LIBROS WHERE id_Libro='{textBox2.Text}'";
+            OleDbCommand eliminar = new OleDbCommand(borrar, cnn);
+
+            cnn.Open();
+            eliminar.ExecuteNonQuery();
+            cnn.Close();
+
+            MessageBox.Show("Eliminado con éxito");
+            Reset();
+        }
+        private void Reset()
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox2.Visible = false;
+            textBox3.Visible = false;
+            textBox4.Visible = false;
+            textBox5.Visible = false;
+        }
     }
 }

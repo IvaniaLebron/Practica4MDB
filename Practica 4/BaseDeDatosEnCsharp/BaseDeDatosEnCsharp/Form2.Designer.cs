@@ -35,6 +35,7 @@ namespace BaseDeDatosEnCsharp
             this.btnLimpiarC = new System.Windows.Forms.Button();
             this.btnVolverC = new System.Windows.Forms.Button();
             this.txtnombre = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -58,7 +59,7 @@ namespace BaseDeDatosEnCsharp
             // 
             // btnIngresarC
             // 
-            this.btnIngresarC.Location = new System.Drawing.Point(12, 265);
+            this.btnIngresarC.Location = new System.Drawing.Point(30, 265);
             this.btnIngresarC.Name = "btnIngresarC";
             this.btnIngresarC.Size = new System.Drawing.Size(94, 29);
             this.btnIngresarC.TabIndex = 6;
@@ -68,7 +69,7 @@ namespace BaseDeDatosEnCsharp
             // 
             // btnLimpiarC
             // 
-            this.btnLimpiarC.Location = new System.Drawing.Point(156, 265);
+            this.btnLimpiarC.Location = new System.Drawing.Point(307, 220);
             this.btnLimpiarC.Name = "btnLimpiarC";
             this.btnLimpiarC.Size = new System.Drawing.Size(94, 29);
             this.btnLimpiarC.TabIndex = 7;
@@ -78,7 +79,7 @@ namespace BaseDeDatosEnCsharp
             // 
             // btnVolverC
             // 
-            this.btnVolverC.Location = new System.Drawing.Point(299, 265);
+            this.btnVolverC.Location = new System.Drawing.Point(307, 265);
             this.btnVolverC.Name = "btnVolverC";
             this.btnVolverC.Size = new System.Drawing.Size(94, 29);
             this.btnVolverC.TabIndex = 8;
@@ -93,11 +94,22 @@ namespace BaseDeDatosEnCsharp
             this.txtnombre.Size = new System.Drawing.Size(212, 27);
             this.txtnombre.TabIndex = 9;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(156, 265);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(124, 29);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Borrar registro";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(433, 331);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtnombre);
             this.Controls.Add(this.btnVolverC);
             this.Controls.Add(this.btnLimpiarC);
@@ -120,5 +132,6 @@ namespace BaseDeDatosEnCsharp
         private System.Windows.Forms.Button btnLimpiarC;
         private System.Windows.Forms.Button btnVolverC;
         private System.Windows.Forms.TextBox txtnombre;
+        private System.Windows.Forms.Button button1;
     }
 }

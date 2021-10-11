@@ -43,6 +43,7 @@ namespace BaseDeDatosEnCsharp
             this.btnPedirL = new System.Windows.Forms.Button();
             this.btnVolverL = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -146,7 +147,7 @@ namespace BaseDeDatosEnCsharp
             // 
             // btnPedirL
             // 
-            this.btnPedirL.Location = new System.Drawing.Point(183, 412);
+            this.btnPedirL.Location = new System.Drawing.Point(215, 412);
             this.btnPedirL.Name = "btnPedirL";
             this.btnPedirL.Size = new System.Drawing.Size(86, 38);
             this.btnPedirL.TabIndex = 16;
@@ -174,11 +175,22 @@ namespace BaseDeDatosEnCsharp
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(21, 416);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(124, 29);
+            this.button2.TabIndex = 19;
+            this.button2.Text = "Borrar registro";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(495, 472);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnVolverL);
             this.Controls.Add(this.btnPedirL);
@@ -216,5 +228,6 @@ namespace BaseDeDatosEnCsharp
         private System.Windows.Forms.Button btnPedirL;
         private System.Windows.Forms.Button btnVolverL;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -45,6 +45,7 @@ namespace BaseDeDatosEnCsharp
             this.label7 = new System.Windows.Forms.Label();
             this.lbLibrosP = new System.Windows.Forms.Label();
             this.lbIDlibro = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nUDcant)).BeginInit();
             this.SuspendLayout();
             // 
@@ -197,11 +198,22 @@ namespace BaseDeDatosEnCsharp
             this.lbIDlibro.Text = "0";
             this.lbIDlibro.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(392, 297);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(124, 29);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Borrar registro";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(766, 363);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lbIDlibro);
             this.Controls.Add(this.lbLibrosP);
             this.Controls.Add(this.lbPrecioP);
@@ -245,5 +257,6 @@ namespace BaseDeDatosEnCsharp
         public System.Windows.Forms.Label lbPrecioP;
         public System.Windows.Forms.Label lbLibrosP;
         public System.Windows.Forms.Label lbIDlibro;
+        private System.Windows.Forms.Button button1;
     }
 }

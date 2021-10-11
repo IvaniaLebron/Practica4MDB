@@ -102,9 +102,6 @@ namespace BaseDeDatosEnCsharp
                 insert1.Parameters["@precio"].Value = lbPrecioP.Text;
 
                 insert1.ExecuteNonQuery();
-                cbCliente.Text = "";
-                nUDcant.Value = 0;
-                dtime1.Text = "";
                 MessageBox.Show("Registro agregado...", "Pedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 conn.Close();
             }
@@ -138,6 +135,29 @@ namespace BaseDeDatosEnCsharp
             precioriginal = Convert.ToDecimal(lbPrecioP.Text);
             nuevoprecio = nUDcant.Value * precioriginal;
             lbPrecioP.Text = nuevoprecio.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string borrar;
+            borrar = $"DELETE FROM PEDIDOS WHERE id_Cliente={cbCliente.Text} AND id_Libro={lbIDlibro.Text} AND CantidadPedido={nUDcant.Value};";
+            SqlCommand delete = new SqlCommand(borrar, conn);
+
+            conn.Open();
+            delete.ExecuteNonQuery();
+            conn.Close();
+
+            MessageBox.Show("El registro fue borrado");
+            Reset();
+        }
+        private void Reset ()
+        {
+            cbCliente.Text = "";
+            nUDcant.Text = "1";
+            lbNombreC.Text = "";
+            lbIDlibro.Text = "";
+            lbLibrosP.Text = "";
+            lbPrecioP.Text = "";
         }
     }
 }

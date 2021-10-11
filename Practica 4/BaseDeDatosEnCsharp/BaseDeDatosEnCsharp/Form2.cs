@@ -47,6 +47,7 @@ namespace BaseDeDatosEnCsharp
                 MessageBox.Show("Registro ingresado...", "Ingresar",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
+                conn.Close();
             }catch
             {
                 MessageBox.Show("El registro no fue ingresado..",
@@ -67,6 +68,20 @@ namespace BaseDeDatosEnCsharp
             Form1 formu1 = new Form1();
             formu1.Show();
             this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string borrar;
+            borrar = $"DELETE FROM CLIENTES WHERE NombreCliente='{txtnombre.Text}';";
+            SqlCommand delete = new SqlCommand(borrar, conn);
+
+            conn.Open();
+            delete.ExecuteNonQuery();
+            conn.Close();
+
+            MessageBox.Show("El registro fue borrado");
+            txtnombre.Clear();
         }
     }
 }
